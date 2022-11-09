@@ -21,7 +21,7 @@ body {
    visibility: hidden;
    overflow-y: auto;
    overflow-x: hidden;
-   /*transition: all 2000ms ease 0s;*/
+   transition: all 800ms ease 0s;
 }
 
 .popup.open {
@@ -55,11 +55,14 @@ body {
 
 .popup__close {
    position: absolute;
-   display: block;
-   right: 10px;
+   right: 15px;
    top: 10px;
    font-size: 30px;
    color: #c5c5c5;
+   background-color: transparent;
+   border: none;
+   outline: none;
+   cursor: pointer;
    /*margin: 20px auto;
    background-color: transparent;
    font-size: 30px;
@@ -87,3 +90,5 @@ body {
    text-decoration: none;
    padding: 5px 0;
 }
+
+/*0f72e5*/
