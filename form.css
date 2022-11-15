@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Space+Mono&display=swap');
+
+:root {
+    --primary-light: #8abdff;
+    --primary: #6d5dfc;
+    --primary-dark: #5b0eeb;
+    --white: #FFFFFF;
+    --greyLight-1: #E4EBF5;
+    --greyLight-2: #c8d0e7;
+    --greyLight-3: #bec8e4;
+    --greyDark: #9baacf;
+    --dark: #6a7693;
+}
+
+html {
+    font-size: 80%;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    background: var(--greyLight-1);
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: "Montserrat", sans-serif;
+    background: var(--greyLight-1);
+    padding: 2.8rem;
+}
+
+.components {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    box-shadow: 0.8rem 0.8rem 1.4rem var(--greyLight-2), -0.2rem -0.2rem 1.8rem var(--white);
+    padding: 3rem;
+}
+
+/*  FORM  */
+
+.link__input,
+.title__input,
+.button__input,
+.timeout__input {
+    width: 100%;
+    height: 3rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    padding-left: 1.4rem;
+    margin-bottom: 0.5rem;
+    box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white);
+    background: none;
+    font-family: inherit;
+    color: var(--greyDark);
+}
+.link__input::-moz-placeholder,
+.title__input::-moz-placeholder,
+.body__textarea::-moz-placeholder,
+.button__input::-moz-placeholder,
+.timeout__input::-moz-placeholder {
+    color: var(--greyLight-3);
+}
+.link__input:-ms-input-placeholder,
+.title__input:-ms-input-placeholder,
+.body__textarea:-ms-input-placeholder,
+.button__input::-ms-input-placeholder,
+.timeout__input::-ms-input-placeholder {
+    color: var(--greyLight-3);
+}
+.link__input::placeholder,
+.title__input::placeholder,
+.body__textarea::placeholder,
+.button__input::placeholder,
+.timeout__input::placeholder {
+    color: var(--greyLight-3);
+}
+.link__input:focus,
+.title__input:focus,
+.body__textarea:focus,
+.select__item:focus,
+.button__input:focus,
+.timeout__input:focus {
+    outline: none;
+    box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+}
+.title__label,
+.link__label,
+.body__label,
+.select__label,
+.segmented__p,
+.button__label,
+.timeout__label {
+    font-size: 1rem;
+    color: var(--dark);
+}
+
+/*  SELECT  */
+.select__block {
+    font-family: inherit;
+}
+.select__item {
+    color: var(--dark);
+    background: var(--greyLight-1);
+    font-family: inherit;
+
+    padding: 6px 10px;
+    width: 100%;
+    border-radius: 10px;
+    border-style: solid;
+    margin: 0;
+
+    box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white);
+}
+
+
+/*  TEXT AREA  */
+.body__textarea {
+    width: 100%;
+    height: 6rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    padding-left: 1.4rem;
+    margin-bottom: 1rem;
+    box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white);
+    background: none;
+    font-family: inherit;
+    color: var(--greyDark);
+}
+
+.textarea:focus {
+    outline: none;
+    box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+}
+
+/**/
+
+
+
+/*  SEGMENTED-CONTROL */
+.segmented-control {
+    width: 27.2rem;
+    height: 4rem;
+    box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+    border-radius: 1rem;
+    display: flex;
+    margin: 1rem 0;
+    align-items: center;
+    position: relative;
+}
+.segmented-control input {
+    display: none;
+}
+.segmented-control > input:checked + label {
+    transition: all 0.5s ease;
+    color: var(--primary);
+}
+.segmented-control__1, .segmented-control__2, .segmented-control__3, .segmented-control__4 {
+    width: 6.8rem;
+    height: 3.6rem;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: var(--greyDark);
+    transition: all 0.5s ease;
+}
+.segmented-control__1:hover, .segmented-control__2:hover, .segmented-control__3:hover, .segmented-control__4:hover {
+    color: var(--primary);
+}
+.segmented-control__color {
+    position: absolute;
+    height: 3.4rem;
+    width: 6.2rem;
+    margin-left: 0.3rem;
+    border-radius: 0.8rem;
+    box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white);
+    pointer-events: none;
+}
+
+#header__left:checked ~ .segmented-control__color {
+    transform: translateX(0);
+    transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+#header__center:checked ~ .segmented-control__color {
+    transform: translateX(6.8rem);
+    transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+#header__right:checked ~ .segmented-control__color {
+    transform: translateX(13.6rem);
+    transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+#header__justify:checked ~ .segmented-control__color {
+    transform: translateX(20.4rem);
+    transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/*  BUTTONS  */
+.submit__button {
+    width: 15rem;
+    height: 4rem;
+    border-radius: 1rem;
+    box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.submit__button {
+    background: var(--primary);
+    box-shadow: inset 0.2rem 0.2rem 1rem var(--primary-light), inset -0.2rem -0.2rem 1rem var(--primary-dark), 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+    color: var(--greyLight-1);
+}
+.submit__button:hover {
+    color: var(--white);
+}
+.submit__button:active {
+    box-shadow: inset 0.2rem 0.2rem 1rem var(--primary-dark), inset -0.2rem -0.2rem 1rem var(--primary-light);
+}
+.submit__button p {
+    font-size: 1.6rem;
+}
+.btn__secondary {
+    /*grid-column: 1/2;*/
+    /*grid-row: 5/6;*/
+    color: var(--greyDark);
+}
+.btn__secondary:hover {
+    color: var(--primary);
+}
+.btn__secondary:active {
+    box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white);
+}
