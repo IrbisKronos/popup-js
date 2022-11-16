@@ -91,7 +91,9 @@ const popup_module_init = (event) => {
         const popupTitle = document.createElement('div');
         popupTitle.classList.add("popup__title");
         popupContent.append(popupTitle);
-        popupTitle.innerHTML = setting.title;
+        const popupTitleHElem = document.createElement(`${setting.title_size.value}`);
+        popupTitle.append(popupTitleHElem);
+        popupTitleHElem.innerHTML = setting.title;
 
         const popupText = document.createElement('div');
         popupText.classList.add("popup__text");
@@ -111,10 +113,11 @@ const popup_module_init = (event) => {
             popupBlock.classList.remove("open");
         }
 
+        /* Close popup by click on X*/
         const popupCloseIcon = document.querySelector(".popup__close");
         popupCloseIcon.addEventListener("click", popupClose);
 
-        /* Open popup + can be close by clock around  popup__content */
+        /* Open popup + can be close by click around popup__content */
         function popupOpen() {
             popupBlock.classList.add("open");
             popupBlock.addEventListener("click", (e) => {

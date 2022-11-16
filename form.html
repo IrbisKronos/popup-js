@@ -54,19 +54,45 @@
     <div>
         <form class="banner_setting_form" id="banner_setting_form">
             <div class="container">
-                <div class="components">
+                <div class="components accordion">
 
-                    <div class="form__title">
-                        <label for="title__input" class="title__label">
-                            <p>Заголовок</p>
-                        </label>
-                        <input type="text"
-                               name="title"
-                               class="title__input"
-                               id="title__input"
-                               placeholder="Введіть текст заголовка..."
-                        >
+                    <div class="accordion__block">
+                        <div class="accordion__title">Accordion Title 1</div>
+                        <div class="accordion__content">
+                            <div class="form__title">
+                                <label for="title__input" class="title__label">
+                                    <p>Заголовок</p>
+                                </label>
+                                <input type="text"
+                                       name="title"
+                                       class="title__input"
+                                       id="title__input"
+                                       placeholder="Введіть текст заголовка..."
+                                >
+                            </div>
+                            <div class="select__block">
+                                <label for="select__item" class="select__label">
+                                    Виберіть розмір заголовка:
+                                </label>
+                                <select class="select__item" name="title_size" id="select__item">
+                                    <option value="h2" selected>Великий</option>
+                                    <option value="h3">Більше середнього</option>
+                                    <option value="h4">Середній</option>
+                                    <option value="h5">Менше середнього</option>
+                                    <option value="h6">Малий</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
+
+                    <div class="accordion__block">
+                        <div class="accordion__title">Accordion Title 2</div>
+                        <div class="accordion__content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, adipisci, asperiores, atque</p>
+                        </div>
+                    </div>
+
+
 
                     <div class="textarea">
                         <label for="body__textarea" class="body__label"><p>Опис</p></label>
@@ -111,18 +137,7 @@
                         >
                     </div>
 
-                    <div class="select__block">
-                        <label for="select__item" class="select__label">
-                            Виберіть розмір заголовка:
-                        </label>
-                        <select class="select__item" id="select__item">
-                            <option value="h2" selected="true">Великий</option>
-                            <option value="h3">Більше середнього</option>
-                            <option value="h4">Середній</option>
-                            <option value="h5">Менше середнього</option>
-                            <option value="h6">Малий</option>
-                        </select>
-                    </div>
+
 
                     <p class="segmented__p">Вирівнювання</p>
                     <div class="segmented-control">
@@ -261,6 +276,28 @@
             location.reload()
         })
     }
+    /* Accordion form collapse */
+    // const accordionBlock = document.getElementsByClassName("accordion__block");
+    // for (let i = 0; i < accordionBlock.length; i++) {
+    //     accordionBlock[i].addEventListener("click", function () {
+    //         this.classList.toggle("active");
+    //     });
+    // }
+    const accordionTitle = document.getElementsByClassName("accordion__title");
+    for (let i = 0; i < accordionTitle.length; i++) {
+        accordionTitle[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            const openAccordion = document.getElementsByClassName("accordion__content");
+            if (this.classList.contains("active")) {
+                const openAccordion = document.getElementsByClassName("accordion__content");
+                openAccordion[i].style.height = "300px";
+            } else {
+                const closeAccordion = document.getElementsByClassName("accordion__content");
+                closeAccordion[i].style.height = "0";
+            }
+        });
+    }
+
 </script>
 </body>
 </html>
