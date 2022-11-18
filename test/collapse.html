@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+</head>
+<body>
+<style>
+    .active {
+        color: green!important;
+    }
+
+    .invisible {
+        display: none !important;
+    }
+
+    .collapse_panel{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .collapse_panel_item{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        border-radius: 11px;
+        border-style: solid;
+        border-width: 1px;
+        min-width: 166px;
+        width: 20%;
+        padding: 11px;
+        color: #d900ec;
+        border-color: #9f9f9f;
+        background-color: #d7d7d7;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    }
+    .collapse_panel_item:hover{
+        background-color: #c7c7c7;
+    }
+    .collapse_content{
+        margin-top: 11px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        border-radius: 11px;
+        border-style: solid;
+        border-width: 1px;
+        padding: 11px;
+        color: #d900ec;
+        border-color: #9f9f9f;
+        background-color: #d7d7d7;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        width: 98%;
+        height: 50vh;
+        min-height: 300px;
+    }
+    .collapse{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+    }
+    .collapse_content_item{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+        margin: 11px;
+        padding: 11px;
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', event => {
+        document.querySelectorAll('.collapse_panel_item').forEach(collapse_panel_item => {
+            collapse_panel_item.addEventListener('click', event => {
+                console.log(event);
+                let collapse_item_id = event.currentTarget.dataset.collapse_item_id;
+                let collapse_panel_content = document.querySelector('.collapse_content_item[data-collapse_item_id="' + collapse_item_id + '"]');
+                collapse_panel_item.classList.toggle('active');
+                collapse_panel_item.classList.toggle('animate__headShake');
+                collapse_panel_content.classList.toggle('invisible');
+            });
+        });
+    });
+</script>
+<div class="collapse">
+    <div class="collapse_panel">
+        <div class="collapse_panel_item animate__animated " data-collapse_item_id="smart_button">
+            <div class="collapse_panel_item_icon">
+                <span class="material-symbols-outlined">
+                    smart_button
+                </span>
+            </div>
+            <div class="collapse_panel_item_title">smart_button</div>
+        </div>
+        <div class="collapse_panel_item animate__animated " data-collapse_item_id="input">
+            <div class="collapse_panel_item_icon">
+                <span class="material-symbols-outlined">
+                    check_box
+                </span>
+            </div>
+            <div class="collapse_panel_item_title">input</div>
+        </div>
+        <div class="collapse_panel_item animate__animated " data-collapse_item_id="checkbox">
+            <div class="collapse_panel_item_icon">
+                <span class="material-symbols-outlined">
+                    radio_button_checked
+                </span>
+            </div>
+            <div class="collapse_panel_item_title">checkbox</div>
+        </div>
+        <div class="collapse_panel_item animate__animated " data-collapse_item_id="radio">
+            <div class="collapse_panel_item_icon">
+                <span class="material-symbols-outlined">
+                    magic_button
+                </span>
+            </div>
+            <div class="collapse_panel_item_title">radio</div>
+        </div>
+    </div>
+    <div class="collapse_content">
+        <div class="collapse_content_item invisible" data-collapse_item_id="smart_button">
+            <h1>smart_button</h1>
+        </div>
+        <div class="collapse_content_item invisible" data-collapse_item_id="input">
+            <h1>input</h1>
+        </div>
+        <div class="collapse_content_item invisible" data-collapse_item_id="checkbox">
+            <h1>checkbox</h1>
+        </div>
+        <div class="collapse_content_item invisible" data-collapse_item_id="radio">
+            <h1>radio</h1>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
+</body>
+</html>

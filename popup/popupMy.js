@@ -133,9 +133,9 @@ const popup_module_init = (event) => {
             popupOpen();
             document.querySelector(".popup").style.transition = "all 0.8s ease 0s";
         }, timer);
-
-        document.querySelector("open").addEventListener("click", () => popupClose());
-
+        if (popupBlock.matches('.open')) {
+            document.querySelector("open").addEventListener("click", () => popupClose());
+        }
     }
 
         let popup_date = new Date()
