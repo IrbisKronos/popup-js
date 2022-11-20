@@ -87,7 +87,9 @@ html {
 }
 
 .collapse__block:active {
-    box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white);
+    box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2),
+                inset -0.2rem -0.2rem 0.5rem var(--white);
+    color: var(--primary) !important;
 }
 
 .collapse__content{
@@ -117,9 +119,29 @@ html {
 .accordion .accordion__block .accordion__title {
     position: relative;
     padding: 0.3rem;
-    background: var(--primary);
-    color: var(--white);
+    color: var(--dark);
     cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1rem;
+    text-indent: 1rem;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+                -0.2rem -0.2rem 0.5rem var(--white);
+    transition: 0.3s ease;
+
+}
+
+.accordion .accordion__block .accordion__title:hover {
+    color: var(--primary);
+}
+
+.accordion .accordion__block .accordion__title:active {
+    box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2),
+                inset -0.2rem -0.2rem 0.5rem var(--white);
+    color: var(--primary) !important;
 }
 
 .accordion .accordion__block .accordion__content {
@@ -137,9 +159,61 @@ html {
 }
 
 .accordion .accordion__block.active .accordion__content {
+    /*background-color: var(--primary);*/
 }
 .accordion .accordion__block .accordion__title p {
     text-transform: uppercase;
+}
+
+/*  ANIMATION  */
+.form_animation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0.5rem;
+}
+.animation_block {
+    width: 12rem;
+    height: 3rem;
+    box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+    -0.2rem -0.2rem 0.5rem var(--white);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 0.5rem;
+    position: relative;
+}
+
+.animation_block input {
+    display: none;
+}
+
+.animation_block > input:checked + label {
+    transition: all 0.5s ease;
+    color: var(--primary);
+}
+
+.animation_block .animate__label {
+    width: 6.8rem;
+    height: 3.6rem;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: var(--greyDark);
+    transition: all 0.5s ease;
+}
+
+.animation_block .animate__label:hover {
+    color: var(--primary);
 }
 
 /*  FORM  */
@@ -344,7 +418,8 @@ html {
 }
 
 .submit__button:active {
-    box-shadow: inset 0.2rem 0.2rem 1rem var(--primary-dark), inset -0.2rem -0.2rem 1rem var(--primary-light);
+    box-shadow: inset 0.2rem 0.2rem 1rem var(--primary-dark),
+                inset -0.2rem -0.2rem 1rem var(--primary-light);
 }
 
 .submit__button p {

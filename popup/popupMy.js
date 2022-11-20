@@ -80,7 +80,8 @@ const popup_module_init = (event) => {
 
         const popupContent = document.createElement('div');
         popupContent.classList.add("popup__content");
-        popupContent.style.textAlign = setting.align_text;
+        popupContent.style.textAlign = setting.banner.align_text;
+        popupContent.classList.add("animate__animated");
         popupBody.append(popupContent);
 
         const popupCloser = document.createElement('button');
@@ -90,23 +91,25 @@ const popup_module_init = (event) => {
 
         const popupTitle = document.createElement('div');
         popupTitle.classList.add("popup__title");
+        popupTitle.classList.add("example");
         popupContent.append(popupTitle);
-        const popupTitleHElem = document.createElement(`${setting.title_size.value}`);
+        const popupTitleHElem = document.createElement(`${setting.banner.title.size.value}`);
         popupTitle.append(popupTitleHElem);
-        popupTitleHElem.innerHTML = setting.title;
+        popupTitleHElem.innerHTML = setting.banner.title.content;
 
         const popupText = document.createElement('div');
         popupText.classList.add("popup__text");
         popupContent.append(popupText);
-        popupText.innerHTML = setting.text;
+        popupText.innerHTML = setting.banner.text.content;
 
         const popupLink = document.createElement('a');
         popupLink.classList.add("popup__link");
         popupContent.append(popupLink);
-        popupLink.setAttribute('href', setting.button_link);
-        popupLink.innerHTML = setting.button_name;
+        popupLink.setAttribute('href', setting.banner.button.link);
+        popupLink.innerHTML = setting.banner.button.name;
 
         addCSS("/popup/popupMy.css");
+        addCSS("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
 
         /* Close popup */
         function popupClose() {
@@ -127,11 +130,18 @@ const popup_module_init = (event) => {
             });
         }
 
-        let timer = Number(setting.timeout + '000'); // convert ms to s
+        let timer = Number(setting.banner.timeout + '000'); // convert ms to s
 
         setTimeout(() => {
             popupOpen();
-            document.querySelector(".popup").style.transition = "all 0.8s ease 0s";
+            /* Включаємо стартову анімацію після сплиття банера */
+            const popupStartContent = document.querySelector(".popup");
+            popupStartContent.style.transition = "all 0.8s ease 0s";
+
+            /* Включаємо анімацію пресетів після стартової */
+            popupStartContent.addEventListener("transitionend", () => {
+                popupContent.classList.add(`${setting.banner.animation}`);
+            });
         }, timer);
         if (popupBlock.matches('.open')) {
             document.querySelector("open").addEventListener("click", () => popupClose());
