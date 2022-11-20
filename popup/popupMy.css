@@ -76,11 +76,32 @@
    position: relative;
    margin: auto;
    text-align: center;
-   background-color: #0f72e5;
-   color: #fff;
    text-decoration: none;
-   padding: 10px 0;
+   padding: 7px;
+   color: #E4EBF5;
+   background-color: #6d5dfc;
+   cursor: pointer;
+   border: none;
+   border-radius: 12px;
+
+   box-shadow: inset .2rem .2rem 1rem #8ABDFFFF,
+   inset -.2rem -.2rem 1rem #5B0EEBFF,
+   0.3rem 0.3rem 0.6rem #C8D0E7FF,
+   -0.2rem -0.2rem 0.5rem #fff;
 }
+.popup__link:hover {
+   color: #fff;
+}
+
+.popup__link:active {
+   box-shadow: inset 0.2rem 0.2rem 1rem #5B0EEBFF,
+   inset -0.2rem -0.2rem 1rem #8ABDFFFF;
+}
+
+.popup__link p {
+   font-size: 1.4rem;
+}
+
 .popup__header {
    display: flex;
    justify-content: space-between;

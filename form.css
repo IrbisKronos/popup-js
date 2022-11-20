@@ -256,7 +256,7 @@ html {
 .radio__9 input:checked ~ label::after,
 .radio__10 input:checked ~ label::after,
 .radio__11 input:checked ~ label::after {
-    background: var(--primary);
+    background: var(--white);
 }
 .radio__1 label,
 .radio__2 label,
@@ -291,7 +291,7 @@ html {
 .radio__9 label:hover::after,
 .radio__10 label:hover::after,
 .radio__11 label:hover::after {
-    background: var(--primary);
+    background: var(--white);
 }
 .radio__1 label::after,
 .radio__2 label::after,
