@@ -82,6 +82,7 @@ const popup_module_init = (event) => {
         popupContent.classList.add("popup__content");
         popupContent.style.textAlign = setting.banner.align_text;
         popupContent.classList.add("animate__animated");
+        popupContent.style.backgroundColor = setting.banner.background.color;
         popupBody.append(popupContent);
 
         const popupCloser = document.createElement('button');
@@ -91,9 +92,8 @@ const popup_module_init = (event) => {
 
         const popupTitle = document.createElement('div');
         popupTitle.classList.add("popup__title");
-        popupTitle.classList.add("example");
         popupContent.append(popupTitle);
-        const popupTitleHElem = document.createElement(`${setting.banner.title.size.value}`);
+        const popupTitleHElem = document.createElement(`${setting.banner.title.size}`);
         popupTitle.append(popupTitleHElem);
         popupTitleHElem.innerHTML = setting.banner.title.content;
 
@@ -107,6 +107,30 @@ const popup_module_init = (event) => {
         popupContent.append(popupLink);
         popupLink.setAttribute('href', setting.banner.button.link);
         popupLink.innerHTML = setting.banner.button.name;
+
+        /* Header */
+        //if (!setting.banner.header.title.content === '' || setting.banner.header.text === '') {}
+            const popupHeader = document.createElement('div');
+            popupHeader.classList.add("popup__header");
+            popupContent.prepend(popupHeader);
+            const popupTitleHeaderH = document.createElement(`${setting.banner.header.title.size}`);
+            popupHeader.append(popupTitleHeaderH);
+            popupTitleHeaderH.innerHTML = setting.banner.header.title.content;
+
+            const popupTextHeader = document.createElement('div');
+            popupTextHeader.classList.add("popup__text");
+            popupHeader.append(popupTextHeader);
+            popupTextHeader.innerHTML = setting.banner.header.text;
+
+
+        /* Footer */
+        //if (!setting.banner.footer.text === '') {}
+            const popupFooter = document.createElement('div');
+            popupFooter.classList.add("popup__footer");
+            popupContent.append(popupFooter);
+            popupFooter.innerHTML = setting.banner.footer.text;
+
+
 
         addCSS("/popup/popupMy.css");
         addCSS("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
@@ -148,19 +172,19 @@ const popup_module_init = (event) => {
         }
     }
 
-        let popup_date = new Date()
-        popup_date.setDate(new Date().getDate() + 30);
-        const cookie_params = {
-            expires: popup_date.toUTCString(),
-            path: '/',
-            secure: true
-        }
+    let popup_date = new Date()
+    popup_date.setDate(new Date().getDate() + 30);
+    const cookie_params = {
+        expires: popup_date.toUTCString(),
+        path: '/',
+        secure: true
+    }
 
-        load_settings_from_server().then((settings) => {
-            init_params_from_get_my()
-            console.log('settings', settings)
-            add_banner(settings)
-        })
+    load_settings_from_server().then((settings) => {
+        init_params_from_get_my()
+        console.log('settings', settings)
+        add_banner(settings)
+    })
 
 }
 document.addEventListener("DOMContentLoaded", (event) => popup_module_init(event));

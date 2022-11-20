@@ -10,7 +10,7 @@
     --greyLight-3: #bec8e4;
     --greyDark: #9baacf;
     --dark: #6a7693;
-    --border:#979797
+    --black: #000000;
 }
 
 html {
@@ -216,12 +216,108 @@ html {
     color: var(--primary);
 }
 
+/* BACKGROUND COLOR */
+.form__bg_color {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin: 0.5rem;
+}
+.color_block {
+    margin: 0.5rem;
+}
+.color_block input {
+    display: none;
+}
+.radio__1 input:checked ~ label,
+.radio__2 input:checked ~ label,
+.radio__3 input:checked ~ label,
+.radio__4 input:checked ~ label,
+.radio__5 input:checked ~ label,
+.radio__6 input:checked ~ label,
+.radio__7 input:checked ~ label,
+.radio__8 input:checked ~ label,
+.radio__9 input:checked ~ label,
+.radio__10 input:checked ~ label,
+.radio__11 input:checked ~ label{
+    box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2),
+    inset -0.2rem -0.2rem 0.5rem var(--white);
+}
+.radio__1 input:checked ~ label::after,
+.radio__2 input:checked ~ label::after,
+.radio__3 input:checked ~ label::after,
+.radio__4 input:checked ~ label::after,
+.radio__5 input:checked ~ label::after,
+.radio__6 input:checked ~ label::after,
+.radio__7 input:checked ~ label::after,
+.radio__8 input:checked ~ label::after,
+.radio__9 input:checked ~ label::after,
+.radio__10 input:checked ~ label::after,
+.radio__11 input:checked ~ label::after {
+    background: var(--primary);
+}
+.radio__1 label,
+.radio__2 label,
+.radio__3 label,
+.radio__4 label,
+.radio__5 label,
+.radio__6 label,
+.radio__7 label,
+.radio__8 label,
+.radio__9 label,
+.radio__10 label,
+.radio__11 label {
+    box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+                -0.2rem -0.2rem 0.5rem var(--white);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    cursor: pointer;
+    width: 6rem;
+    height: 6rem;
+}
+.radio__1 label:hover::after,
+.radio__2 label:hover::after,
+.radio__3 label:hover::after,
+.radio__4 label:hover::after,
+.radio__5 label:hover::after,
+.radio__6 label:hover::after,
+.radio__7 label:hover::after,
+.radio__8 label:hover::after,
+.radio__9 label:hover::after,
+.radio__10 label:hover::after,
+.radio__11 label:hover::after {
+    background: var(--primary);
+}
+.radio__1 label::after,
+.radio__2 label::after,
+.radio__3 label::after,
+.radio__4 label::after,
+.radio__5 label::after,
+.radio__6 label::after,
+.radio__7 label::after,
+.radio__8 label::after,
+.radio__9 label::after,
+.radio__10 label::after,
+.radio__11 label::after {
+    content: "";
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--greyDark);
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+
 /*  FORM  */
 .link__input,
 .title__input,
 .button__input,
 .timeout__input {
-    width: 100%;
+    width: 98%;
     height: 3rem;
     border: none;
     border-radius: 1rem;
@@ -265,7 +361,8 @@ html {
 .button__input:focus,
 .timeout__input:focus {
     outline: none;
-    box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+    box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+    -0.2rem -0.2rem 0.5rem var(--white);
 }
 
 .title__label,
@@ -299,7 +396,7 @@ html {
 
 /*  TEXT AREA  */
 .body__textarea {
-    width: 100%;
+    width: 97%;
     height: 6rem;
     border: none;
     border-radius: 1rem;

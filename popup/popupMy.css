@@ -6,9 +6,6 @@
    box-sizing: border-box;
 }
 
-body {
-   background-color: #fff;
-}
 
 .popup {
    position: fixed;
@@ -43,7 +40,6 @@ body {
 }
 
 .popup__content {
-   background-color: #fff;
    color: #000;
    max-width: 800px;
    padding: 30px;
@@ -84,4 +80,9 @@ body {
    color: #fff;
    text-decoration: none;
    padding: 10px 0;
+}
+.popup__header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
 }
