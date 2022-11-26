@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
     <title>Title</title>
 
     <style>
@@ -21,6 +22,7 @@
     <link rel="stylesheet" href="form.css">
 </head>
 <style>
+
     .test_container {
         display: flex;
         height: 100%;
@@ -30,6 +32,7 @@
         width: 50%;
         height: 100%;
     }
+
 
     .iframe_container {
 
@@ -46,6 +49,19 @@
 
     .iframe_popup {
         width: 50%;
+    }
+
+    @media (max-width: 767px) {
+        .test_container {
+            flex-direction: column;
+        }
+        .test_container > div {
+            width: 100%;
+        }
+        .iframe_popup {
+            width: 100%;
+            height: 100%;
+        }
     }
 </style>
 
@@ -66,6 +82,7 @@
                         </div>
                         <div class="accordion__content invisible" data-accordion_item_id="popup_banner">
                             <div class="collapse">
+<!--                            Видима панель з налаштуваннями спливаючого банера-->
                                 <div class="collapse__panel">
                                     <div class="collapse__block animate__animated" data-collapse_item_id="title">
                                         <div class="collapse__icon">
@@ -124,6 +141,8 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="divider"></div>
+                                <!--                            Прихована панель з налаштуваннями спливаючого банера-->
                                 <div class="collapse__content">
                                     <div class="collapse__item invisible" data-collapse_item_id="title">
                                         <div class="form__title">
@@ -159,7 +178,9 @@
                                                       name="banner[text][content]"
                                                       placeholder="Введіть зміст банера..."></textarea>
                                         </div>
-                                        <div class="segmented-control">
+
+<!--                                    Вирівнювання всього тексту банера:-->
+                                        <div class="segmented-control" id="align_text_select">
                                             <input type="radio" name="banner[align_text]" value="left"
                                                    id="header__left" checked/>
                                             <label for="header__left" class="segmented-control__1">
@@ -210,6 +231,79 @@
                                                    id="link__input"
                                                    placeholder="Вставте чи введіть URL">
                                         </div>
+<!--                                        Колір кнопки: -->
+                                        <label>
+                                            <p>Колір кнопки</p>
+                                        </label>
+                                        <div class="form__bg_color">
+                                            <div class="color_block button_radio__1" style="background-color: #cdb4db">
+                                                <input type="radio" name="banner[button][bg_color]" value="#cdb4db"
+                                                       id="button_bg_color_1"/>
+                                                <label for="button_bg_color_1" class="color__label">
+                                                </label>
+                                            </div>
+                                            <div class="color_block button_radio__2" style="background-color: #ffc8dd">
+                                                <input type="radio" name="banner[button][bg_color]" value="#ffc8dd"
+                                                       id="button_bg_color_2"/>
+                                                <label for="button_bg_color_2" class="color__label">
+                                                </label>
+                                            </div>
+                                            <div class="color_block button_radio__3" style="background-color: #f8bbd0">
+                                                <input type="radio" name="banner[button][bg_color]" value="#f8bbd0"
+                                                       id="button_bg_color_3"/>
+                                                <label for="button_bg_color_3" class="color__label">
+                                                </label>
+                                            </div>
+                                            <div class="color_block button_radio__4" style="background-color: #e1bee7">
+                                                <input type="radio" name="banner[button][bg_color]" value="#e1bee7"
+                                                       id="button_bg_color_4"/>
+                                                <label for="button_bg_color_4" class="color__label">
+                                                </label>
+                                            </div>
+                                            <div class="color_block button_radio__5" style="background-color: #d1c4e9">
+                                                <input type="radio" name="banner[button][bg_color]" value="#d1c4e9"
+                                                       id="button_bg_color_5"/>
+                                                <label for="button_bg_color_5" class="color__label">
+                                                </label>
+                                            </div>
+                                            <div class="color_block button_radio__6" style="background-color: #c5cae9">
+                                                <input type="radio" name="banner[button][bg_color]" value="#c5cae9"
+                                                       id="button_bg_color_6"/>
+                                                <label for="button_bg_color_6" class="color__label">
+                                                </label>
+                                            </div>
+                                            <div class="color_block button_radio__7" style="background-color: #bbdefb">
+                                                <input type="radio" name="banner[button][bg_color]" value="#bbdefb"
+                                                       id="button_bg_color_7"/>
+                                                <label for="button_bg_color_7" class="color__label">
+                                                </label>
+                                            </div>
+                                            <div class="color_block button_radio__8" style="background-color: #e9edc9">
+                                                <input type="radio" name="banner[button][bg_color]" value="#e9edc9"
+                                                       id="button_bg_color_8"/>
+                                                <label for="button_bg_color_8" class="color__label">
+                                                </label>
+                                            </div>
+                                            <div class="color_block button_radio__9" style="background-color: #fefae0">
+                                                <input type="radio" name="banner[button][bg_color]" value="#fefae0"
+                                                       id="button_bg_color_9"/>
+                                                <label for="button_bg_color_9" class="color__label">
+                                                </label>
+                                            </div>
+                                            <div class="color_block button_radio__10" style="background-color: #faedcd">
+                                                <input type="radio" name="banner[button][bg_color]" value="#faedcd"
+                                                       id="button_bg_color_10"/>
+                                                <label for="button_bg_color_10" class="color__label">
+                                                </label>
+                                            </div>
+                                            <div class="color_block button_radio__11" style="background-color: #fff">
+                                                <input type="radio" name="banner[button][bg_color]" value="#fff"
+                                                       id="button_bg_color_11" checked/>
+                                                <label for="button_bg_color_11" class="color__label">
+                                                </label>
+                                            </div>
+                                        </div>
+
                                     </div>
                                     <div class="collapse__item invisible" data-collapse_item_id="timer">
                                         <div class="form__timeout">
@@ -344,6 +438,9 @@
                                         </div>
                                     </div>
                                     <div class="collapse__item invisible" data-collapse_item_id="bg_color">
+                                        <label>
+                                            <p>Колір фону</p>
+                                        </label>
                                         <div class="form__bg_color">
                                             <div class="color_block radio__1" style="background-color: #cdb4db">
                                                 <input type="radio" name="banner[background][color]" value="#cdb4db"
@@ -420,7 +517,7 @@
                                             </label>
                                             <input type="file"
                                                    class="image__input"
-                                                   name="banner[image]"
+                                                   name="banner[background][image]"
                                                    id="image__input"
                                                    accept="image/*"
                                             >
@@ -431,6 +528,7 @@
                         </div>
                     </div>
 
+<!--                Акордіон з налаштуваннями Header спливаючого банера-->
                     <div class="accordion__block">
                         <div class="accordion__title animate__animated" data-accordion_item_id="header">
                             <div class="accordion__icon">
@@ -459,7 +557,9 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="divider"></div>
 
+                                <!--                                Частина що приховується-->
                                 <div class="collapse__content">
                                     <div class="collapse__item invisible" data-collapse_item_id="header_title">
                                         <div class="form__title">
@@ -504,6 +604,7 @@
                         </div>
                     </div>
 
+<!--                Акордіон з налаштуваннями Footer спливаючого банера-->
                     <div class="accordion__block">
                         <div class="accordion__title animate__animated" data-accordion_item_id="footer">
                             <div class="accordion__icon">
@@ -519,10 +620,11 @@
                                             <span class="material-symbols-outlined">description</span>
                                         </div>
                                         <div class="collapse__title">
-                                            Текст блока Footer
+                                            Текст "Footer"
                                         </div>
                                     </div>
                                 </div>
+                                <div class="divider"></div>
 
                                 <div class="collapse__content">
                                     <div class="collapse__item invisible" data-collapse_item_id="footer_text">
@@ -563,8 +665,6 @@
 
     <div class="iframe_container">
         <div style="position: fixed; width:100%; height: 100%">
-            <iframe src="https://alerts.in.ua/" class="iframe_root"></iframe>
-            <!--        <iframe src="index.html" class="iframe_popup"></iframe>-->
             <iframe src="/popup/index.html" class="iframe_popup"></iframe>
             <!-- <iframe srcdoc="<script src='https://artem.bobmv.art/popup.js'></script>" allow="fullscreen"></iframe>-->
         </div>
@@ -578,7 +678,6 @@
     bannerForm.onsubmit = (e) => {
         e.preventDefault()
         fetch('save_form.php', {method: 'post', body: new FormData(bannerForm)}).then((response) => {
-            console.log(response)
             location.reload()
         })
     }
@@ -618,6 +717,57 @@
             })
         })
     });
+
+    /* Отримання налаштувань форми за замовченням з json */
+    const load_settings_from_server = async () => {
+        let response = await fetch('popup/popup.json');
+        if (response.ok) {
+            return await response.json();
+        } else {
+            alert("Ошибка HTTP: " + response.status);
+        }
+    }
+
+    const addByDefaultSettingsForForm = (setting) => {
+        document.getElementById('title__input').value = setting.banner.title.content;
+        document.getElementById('select__item').value = setting.banner.title.size;
+        document.getElementById('button__input').value = setting.banner.button.name;
+        document.getElementById('link__input').value = setting.banner.button.link;
+        document.getElementById('body__textarea').value = setting.banner.text.content;
+
+        /* Присвоєння checked тому input, чиє input.value співпадає зі значенням з json */
+        let checkedInput = (nameCollection, jsonSetting) => {
+            for (let i = 0; i < nameCollection.length; i++) {
+                if (jsonSetting === nameCollection[i].value) {
+                    nameCollection[i].checked = true;
+                }
+            }}
+        /* Вирівнювання тексту банера */
+        const bannerAlign = document.getElementsByName('banner[align_text]');
+        checkedInput(bannerAlign, setting.banner.align_text);
+        /* Анімація банера */
+        const bannerAnimation = document.getElementsByName('banner[animation]');
+        checkedInput(bannerAnimation, setting.banner.animation);
+        /* Кольор фону банера */
+        const bannerBgColor = document.getElementsByName('banner[background][color]');
+        checkedInput(bannerBgColor, setting.banner.background.color);
+        /* Таймер спливання банера */
+        document.getElementById('timeout__input').value = setting.banner.timeout;
+
+        /* Блок Header банера */
+        document.getElementById('header_title_size').value = setting.banner.header.title.size; // Створює H2-H6.
+        document.getElementById('header_title').value = setting.banner.header.title.content;
+        document.getElementById('header_text').value = setting.banner.header.text;
+
+        /* Блок Footer банера */
+        document.getElementById('footer_text').value = setting.banner.footer.text;
+
+
+    }
+
+    load_settings_from_server().then((settings) => {
+        addByDefaultSettingsForForm(settings);
+    })
 
 </script>
 </body>

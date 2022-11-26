@@ -69,7 +69,6 @@ const popup_module_init = (event) => {
     /* Create popup-banner */
     const add_banner = (setting) => {
 
-
         const popupBlock = document.createElement('div');
         popupBlock.classList.add("popup");
         document.body.append(popupBlock);
@@ -82,6 +81,7 @@ const popup_module_init = (event) => {
         popupContent.classList.add("popup__content");
         popupContent.style.textAlign = setting.banner.align_text;
         popupContent.classList.add("animate__animated");
+        popupContent.style.backgroundImage = `url(${setting.banner.background.image})`;
         popupContent.style.backgroundColor = setting.banner.background.color;
         popupBody.append(popupContent);
 
@@ -107,14 +107,18 @@ const popup_module_init = (event) => {
         popupContent.append(popupLink);
         popupLink.setAttribute('href', setting.banner.button.link);
         popupLink.innerHTML = setting.banner.button.name;
+        popupLink.style.backgroundColor = setting.banner.button.bg_color;
 
         /* Header */
-        //if (!setting.banner.header.title.content === '' || setting.banner.header.text === '') {}
             const popupHeader = document.createElement('div');
             popupHeader.classList.add("popup__header");
             popupContent.prepend(popupHeader);
+            /* Header Title */
+            const popupTitleHeader = document.createElement('div');
+            popupTitleHeader.classList.add("popup__header_title");
+            popupHeader.prepend(popupTitleHeader);
             const popupTitleHeaderH = document.createElement(`${setting.banner.header.title.size}`);
-            popupHeader.append(popupTitleHeaderH);
+            popupTitleHeader.prepend(popupTitleHeaderH);
             popupTitleHeaderH.innerHTML = setting.banner.header.title.content;
 
             const popupTextHeader = document.createElement('div');
@@ -124,7 +128,6 @@ const popup_module_init = (event) => {
 
 
         /* Footer */
-        //if (!setting.banner.footer.text === '') {}
             const popupFooter = document.createElement('div');
             popupFooter.classList.add("popup__footer");
             popupContent.append(popupFooter);
